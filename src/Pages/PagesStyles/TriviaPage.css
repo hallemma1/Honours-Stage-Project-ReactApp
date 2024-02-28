@@ -1,0 +1,9 @@
+.TriviaPage{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    background-color: orange;
+    align-items: center;
+    justify-content: center;
+}

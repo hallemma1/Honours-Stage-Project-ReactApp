@@ -1,0 +1,17 @@
+.sliderComp{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0; 
+    background-color: var(--lightGreyBackground);
+    padding: 0;
+    margin: 0;
+}
+
+.sliderComp-slider{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+}

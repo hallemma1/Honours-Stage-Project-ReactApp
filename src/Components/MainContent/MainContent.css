@@ -1,0 +1,67 @@
+.main-content-container {
+    display: flex; 
+    height: 100%;
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    padding-top: 15px;
+}
+.main-content-container-top{
+    display: flex;
+    flex: 4;
+}
+.main-content-container-bottom {
+    flex: 1; /* Adjust the flex value as needed */
+
+}
+
+
+
+.map-container {
+    flex: 3; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin-left: 60px;
+}
+.map-container-box-shadow{
+    width: 70%;
+    height: 100%;
+    box-shadow: 2px 2px 4px 4px #EBEBEB;
+    background-color: var(--lightGreyBackground);
+    border-radius: 20px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.actual-map{
+    width: 95%;
+    height: 95%;
+    position: absolute;
+}
+.leaflet-container{
+    border-radius: 15px;
+    position: absolute;
+}
+
+.buttons-panel-container {
+    flex: 1;
+    display: flex;
+    margin-right: 150px;
+    background-color: gold;
+}
+.buttons-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.button-component {
+    width: 100%; 
+    height: 25%;
+}
+
+  
