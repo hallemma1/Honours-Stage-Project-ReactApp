@@ -27,7 +27,7 @@ const theme = createTheme({
 })
 
 const navItems = [
-  { name: 'Home', path: '/Pages/Home' },
+  { name: 'Home', path: '/' },
   { name: 'Map', path: '/Pages/MapPage' },
   { name: 'Trivia', path: '/Pages/TriviaPage' },
   { path: '/Pages/BookPage', name: 'Book' },
@@ -39,7 +39,7 @@ function App() {
     <Router>
       <NavBar navItems={navItems} />
       <Routes>
-        <Route path="/Pages/Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Pages/MapPage" element={<MapPage />} />
         <Route path="/Pages/TriviaPage" element={<TriviaPage />} />
         <Route path="/Pages/BookPage" element={<BookPage />} />

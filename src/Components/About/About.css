@@ -1,0 +1,19 @@
+.AboutComponent{
+    margin-top: 20px;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.AboutComponent-heading{
+    font-size: 40px;
+}
+.AboutComponent-paragraph{
+    width: 90%;
+    display: flex;
+    position: relative;
+    background-color: antiquewhite;
+}

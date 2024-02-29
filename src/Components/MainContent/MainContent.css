@@ -28,7 +28,7 @@
 .map-container-box-shadow{
     width: 70%;
     height: 100%;
-    box-shadow: 2px 2px 4px 4px #EBEBEB;
+    box-shadow: 2px 2px 4px 4px var(--lightShadow);
     background-color: var(--lightGreyBackground);
     border-radius: 20px;
     position: relative;
@@ -50,7 +50,6 @@
     flex: 1;
     display: flex;
     margin-right: 150px;
-    background-color: gold;
 }
 .buttons-container{
     width: 100%;

@@ -10,9 +10,9 @@ const Map = () => {
   return (
      <div className='map-container'>
       <div className='map-container-box-shadow'>
-      <div className='actual-map'>
-      <ActualMap/>
-      </div>
+        <div className='actual-map'>
+          <ActualMap/>
+        </div>
       </div>
     </div>
   

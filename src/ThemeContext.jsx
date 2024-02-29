@@ -5,7 +5,11 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState({
     primaryColor: '#0661F4',
-    secondaryColor: '#FFF',
+    primaryColorLight: '#66A1FF',
+    primaryColorDark: '#0040A8',
+    secondaryColor: '#BC388C',
+    secondaryColorLight: '#EF81C7',
+    secondaryColorDark: '#97216C',
     textColorDark: '#000',
     textColorLight: '#FFF',
     backgroundColor: '#FFF',
