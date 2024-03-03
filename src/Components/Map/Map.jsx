@@ -5,13 +5,13 @@ import '../MainContent/MainContent.css'
 
 import ActualMap from './ActualMap';
 
-const Map = () => {
+const Map = (penguinData) => {
 
   return (
      <div className='map-container'>
       <div className='map-container-box-shadow'>
         <div className='actual-map'>
-          <ActualMap/>
+          <ActualMap penguinData={penguinData}/>
         </div>
       </div>
     </div>

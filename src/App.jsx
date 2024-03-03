@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Slider from './Components/Slider/SliderComp.jsx';
@@ -34,6 +35,13 @@ const navItems = [
 ];
 
 function App() {
+//   useEffect(() => {
+//     // Trigger the server-side work when the component mounts using Axios
+//     axios.post('http://localhost:5108/api/test')
+//         .then(response => console.log(response.data))
+//         .catch(error => console.error('Error:', error));
+// }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+
 
   return (
     <Router>

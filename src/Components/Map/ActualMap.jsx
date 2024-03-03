@@ -8,7 +8,7 @@ import './Map.css';
 import '../MainContent/MainContent.css';
 import json from './icebergs-apr-2022.json';
 
-const ActualMap = () => {
+const ActualMap = (penguinData) => {
     const mapRef = useRef(null);
 
     useEffect(() => {
