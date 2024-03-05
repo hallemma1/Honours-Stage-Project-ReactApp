@@ -5,7 +5,7 @@ import { fetchLabels } from '../Utility/FileReader';
 import React, { useEffect, useState } from 'react';
 import SliderComp from '../Slider/SliderComp';
 
-const MainContent = (penguinData) => {
+const MainContent = () => {
 
     const [labels, setLabels] = useState([]);
 
@@ -23,7 +23,7 @@ const MainContent = (penguinData) => {
     <>
     <div className="main-content-container">
       <div className='main-content-container-top'>
-        <Map penguinData={penguinData}/>
+        <Map />
         <ButtonsPanel labels={labels}/>
       </div>
       <div className='main-content-container-bottom'>

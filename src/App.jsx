@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
-import Slider from './Components/Slider/SliderComp.jsx';
-import MainContent from './Components/MainContent/MainContent.jsx';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { indigo, lightBlue } from '@mui/material/colors';
 import NavBar from './Components/Nav/NavBar.jsx'
@@ -12,20 +11,20 @@ import MapPage from './Pages/MapPage.jsx'
 import TriviaPage from './Pages/TriviaPage.jsx'
 import BookPage from './Pages/BookPage.jsx';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#0661F4'
-    },
-    secondary: {
-      main: '#FC9F22'
-    }
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       main: '#0661F4'
+//     },
+//     secondary: {
+//       main: '#FC9F22'
+//     }
     
-  },
-  typography:{
-    fontFamily: 'Rubik'
-  }
-})
+//   },
+//   typography:{
+//     fontFamily: 'Rubik'
+//   }
+// })
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -35,12 +34,22 @@ const navItems = [
 ];
 
 function App() {
-//   useEffect(() => {
-//     // Trigger the server-side work when the component mounts using Axios
-//     axios.post('http://localhost:5108/api/test')
-//         .then(response => console.log(response.data))
-//         .catch(error => console.error('Error:', error));
-// }, []); // The empty dependency array ensures that this effect runs once when the component mounts
+  // const [penguinDetails, setPenguinDetails] = useState('Unknown Penguin');
+  // const [scoreDetails, setScoreDetails] = useState('Unknown Score');
+  // const { search } = useLocation();
+  // const params = new URLSearchParams(search);
+  // const navigate = useNavigate();
+
+
+  // useEffect(() => {
+  //   const penguinName = params.get('penguinName') || 'Unknown Penguin';
+  //   setPenguinDetails(penguinName);
+
+  //   const score = params.get('score') || 'Unknown Score';
+  //   setScoreDetails(score);
+
+  //   navigate(`/penguinName=${penguinName}&score=${score}`);
+  // }, [params]);
 
 
   return (
