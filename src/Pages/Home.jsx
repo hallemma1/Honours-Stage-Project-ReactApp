@@ -9,7 +9,7 @@ return (
         <div className='HomePage-content'>
             <WelcomeComponent/>
             <CarouselComp/>
-            <About />
+            
             
         </div>
     </div>
