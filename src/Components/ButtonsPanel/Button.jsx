@@ -2,7 +2,10 @@ import '../MainContent/MainContent.css'
 import MaterialButton from '@mui/material/Button'
 import Box from '@mui/material/Box';
 
-export default function Button({label}) {
+const Button = ({ onClick, label }) => {
+
+
+
 return (
     <div className="button-component">
         <Box
@@ -20,6 +23,7 @@ return (
             variant="contained"
             size="large"
             sx={{ width: '80%', height: '80%', textTransform:'none'}}
+            onClick={onClick}
             >
                 {label}
             </MaterialButton>
@@ -27,3 +31,4 @@ return (
     </div>
     
 )}
+export default Button;
