@@ -3,14 +3,26 @@ import './SliderComp.css';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
-
+import { usePenguinData } from '../../Hooks/usePenguinData';
 
 export default function SliderComp() {
-  const [value, setValue] = useState(30);
+  const {getYearSelectedData} = usePenguinData(); 
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const [sliderValue, setSliderValue] = useState();
+
+  const fetchData = async (selectedValue) => {
+      const data = await getYearSelectedData(selectedValue);
+      console.log("year selected Data:", data);
+      // Handle the updated data as needed
+
   };
+
+  const handleSliderChange = (event, newValue) => {
+    setSliderValue(newValue);
+    fetchData(newValue);
+  };
+
+
 
   const marks = [
     { value: 1950, label: '1950', },
@@ -50,6 +62,7 @@ export default function SliderComp() {
             min={1950}
             max={2035}
             color="primary"
+            onChange={(event, newValue) => handleSliderChange(event, newValue)}
           />
         </Box>
       </div>

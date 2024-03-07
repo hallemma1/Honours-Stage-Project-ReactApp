@@ -3,39 +3,21 @@ import L, { geoJSON } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'proj4leaflet';
 import 'leaflet-polar-graticule';
-import { useGetPenguinData } from '../../Hooks/useGetPenguinData';
+import { usePenguinData } from '../../Hooks/usePenguinData';
 import {scaleLinear} from "d3-scale";
 import { interpolateBlues } from 'd3-scale-chromatic';
 import '../MainContent/MainContent.css'
 
-function getColor(d) {
-    return d > 1000 ? '#800026' :
-           d > 500  ? '#BD0026' :
-           d > 200  ? '#E31A1C' :
-           d > 100  ? '#FC4E2A' :
-           d > 50   ? '#FD8D3C' :
-           d > 20   ? '#FEB24C' :
-           d > 10   ? '#FED976' :
-                      '#FFEDA0';
-}
-
-function style(feature) {
-    console.log("penguinCount = ", feature.properties.penguinCount);
-    return {
-        fillColor: getColor(feature.properties.penguinCount),
-    };
-}
-const colourScale = scaleLinear().domain([0,1000000]).range(["#fff", "#000"])
 
 
 const ActualMap = () => {
 
-    const {getPenguinData} = useGetPenguinData(); 
+    const {getInitialData} = usePenguinData(); 
     const mapRef = useRef(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getPenguinData();
+            const data = await getInitialData();
             console.log("DATA: ", data);
             return data;
         };
