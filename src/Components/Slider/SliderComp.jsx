@@ -5,16 +5,16 @@ import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import { usePenguinData } from '../../Hooks/usePenguinData';
 
-export default function SliderComp() {
+export default function SliderComp({updateMapData}) {
   const {getYearSelectedData} = usePenguinData(); 
 
   const [sliderValue, setSliderValue] = useState();
 
   const fetchData = async (selectedValue) => {
-      const data = await getYearSelectedData(selectedValue);
-      console.log("year selected Data:", data);
+      const data = await getYearSelectedData();
+      updateMapData(data);
+      return data;
       // Handle the updated data as needed
-
   };
 
   const handleSliderChange = (event, newValue) => {

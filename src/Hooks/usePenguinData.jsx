@@ -8,7 +8,7 @@ export const usePenguinData = () => {
     const getInitialData = async () => {
         try {
             const response = await api.post('/v1/getinitalstate');
-            console.log('Response From WebHook', response.data);
+            console.log('Hook response from intial:', response.data);
             return response.data;
         } catch (error) {
             console.error('Error Getting Initial Penguin Data');
