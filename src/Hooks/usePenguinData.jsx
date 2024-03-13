@@ -19,8 +19,8 @@ export const usePenguinData = () => {
     const getYearSelectedData = async (year) => {
         //call
         try{
-            //const response = await api.post(`v1/yearselected/year=${year}`);
-            const response = await api.post(`v1/yearselected`);
+            const response = await api.post(`v1/yearselected/year=${year}`);
+            //const response = await api.post(`v1/yearselected`);
             console.log('response from year selected: ', response.data );
             return response.data;
         } catch (error){

@@ -4,8 +4,6 @@ import Box from '@mui/material/Box';
 
 const Button = ({ onClick, label }) => {
 
-
-
 return (
     <div className="button-component">
         <Box

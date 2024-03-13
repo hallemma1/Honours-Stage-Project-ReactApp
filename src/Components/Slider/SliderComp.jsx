@@ -11,7 +11,7 @@ export default function SliderComp({updateMapData}) {
   const [sliderValue, setSliderValue] = useState();
 
   const fetchData = async (selectedValue) => {
-      const data = await getYearSelectedData();
+      const data = await getYearSelectedData(selectedValue);
       updateMapData(data);
       return data;
       // Handle the updated data as needed
@@ -41,8 +41,6 @@ export default function SliderComp({updateMapData}) {
     { value: 2015, label: '2015', },
     { value: 2020, label: '2020', },
     { value: 2025, label: '2025', },
-    { value: 2030, label: '2030', },
-    { value: 2035, label: '2035', },
   ];
 
   function valuetext(value) {
@@ -60,7 +58,7 @@ export default function SliderComp({updateMapData}) {
             marks={marks}
             step={null}
             min={1950}
-            max={2035}
+            max={2025}
             color="primary"
             onChange={(event, newValue) => handleSliderChange(event, newValue)}
           />

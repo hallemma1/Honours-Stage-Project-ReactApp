@@ -8,8 +8,9 @@ const ButtonsPanel = ({updateMapData}) => {
 
     const {getPollutionChangeData} = usePenguinData(); 
     const {getCarbonEmissionsChangeData} = usePenguinData(); 
-    const {getOverfishingChangeData} = usePenguinData(); 
-  
+    const {getOverfishingChangeData} = usePenguinData();    
+    const {getInitialData} = usePenguinData(); 
+
     const handlePollutionButtonClick = async () => {
         const data = await getPollutionChangeData();
         updateMapData(data);
@@ -28,17 +29,21 @@ const ButtonsPanel = ({updateMapData}) => {
         console.log("overfishing:", data);
       };
 
+      const handleResetButtonClick = async () => {
+        const data = await getInitialData();
+        updateMapData(data);
+        console.log("reset:", data);
+      };
+
 //
 
 return (
     <div className="buttons-panel-container"> 
         <div className='buttons-container'>
-            <Button onClick={handlePollutionButtonClick} updateMapData={updateMapData} label={'Pollution'}></Button>
-            <Button onClick={handleCarbonEmissionsButtonClick} updateMapData={updateMapData} label={'Carbon Emissions'}></Button>
-            <Button onClick={handleOverfishingButtonClick} updateMapData={updateMapData} label={'Overfishing'}></Button>
-            {/* {labels.map((label, index) => (
-                <Button key={index} label={label} handleButtonSelect={handleButtonSelect}></Button>
-            ))}  */}
+            <Button className="change-button" onClick={handlePollutionButtonClick} updateMapData={updateMapData} label={'Pollution'}></Button>
+            <Button className="change-button" onClick={handleCarbonEmissionsButtonClick} updateMapData={updateMapData} label={'Carbon Emissions'}></Button>
+            <Button className="change-button" onClick={handleOverfishingButtonClick} updateMapData={updateMapData} label={'Overfishing'}></Button>
+            <Button className="reset-button" onClick={handleResetButtonClick} updateMapData={updateMapData} label={'Reset'}></Button>
         </div>
     </div>
     

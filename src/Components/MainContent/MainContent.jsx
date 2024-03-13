@@ -1,5 +1,6 @@
 import Map from '../Map/Map';
 import ButtonsPanel from '../ButtonsPanel/ButtonsPanel';
+import MapKey from '../MapKey/MapKey';
 import './MainContent.css';
 import { fetchLabels } from '../Utility/FileReader';
 import React, { useEffect, useState } from 'react';
@@ -10,7 +11,7 @@ import { usePenguinData } from '../../Hooks/usePenguinData';
 const MainContent = () => {
 
   const {getInitialData} = usePenguinData(); 
-  
+
   useEffect(() => {
     const  fetchData = async() => {
       const lines = await fetchLabels();
@@ -38,6 +39,7 @@ const MainContent = () => {
     <>
     <div className="main-content-container">
       <div className='main-content-container-top'>
+        <MapKey/>
         <Map mapData={mapData} />
         <ButtonsPanel updateMapData={updateMapData}/>
       </div>

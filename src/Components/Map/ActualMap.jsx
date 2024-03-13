@@ -52,7 +52,7 @@ const ActualMap = ({mapData}) => {
             if (!mapRef.current) {
             const mapInstance = L.map('map', {
                 crs: crs,
-                center: [-93, 0],
+                center: [-91, 10],
                 zoom: 0,
             });
 
@@ -79,36 +79,181 @@ const ActualMap = ({mapData}) => {
             }
 
 
-            const calculateColor = (population) => {
-                const colorScale = scaleLinear()
-                .domain([0, 25000])
-                .range(['#add8e6', '#00008b']); //light blue to dark blue
+            //START
+            //ICON SIZE
+            // if (geoJSON && Array.isArray(geoJSON.features)) {
+            //     const markers = L.geoJSON(geoJSON, {
+            //         pointToLayer: (feature, latlng) => {
+            //             const population = feature.properties.penguinCount;
+            //             const iconSize = calculateIconSize(population);
+            //             return L.marker(latlng, { icon: createPopulationIcon(iconSize) }).bindPopup(
+            //                 `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
+            //             );
+            //         },
+            //     });
+                
+            //     markers.addTo(mapRef.current);
+                              
+            //     function calculateIconSize(population) {
+            //         const maxSize = 25; // Maximum icon size
+            //         const minSize = 10; // Minimum icon size
+            //         // Assuming penguinCount ranges from 0 to 25000
+            //         const size = Math.max(minSize, (population / 250000) * maxSize); // Adjusting size proportionally
+            //         return [size, size];
+            //     }
+                
+            //     function createPopulationIcon(iconSize) {
+            //         return L.divIcon({
+            //             className: 'population-icon',
+            //             iconSize: iconSize,
+            //             iconAnchor: [iconSize[0] / 2, iconSize[1] / 2], // Centering anchor
+            //             html: `<div style="background-color: blue; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
+            //         });                       
+            //     }
+                //ICON SIZE
+                //END
             
-                return colorScale(population);
-            };
+                //START
+                //ICON COLOUR
+            // const calculateColor = (population) => {
+            //     const colorScale = scaleLinear()
+            //     .domain([0, 25000])
+            //     .range(['#add8e6', '#00008b']); //light blue to dark blue
+            
+            //     return colorScale(population);
+            // };
 
+            // if (geoJSON && Array.isArray(geoJSON.features)) {
+            //     const markers = L.geoJSON(geoJSON, {
+            //         pointToLayer: (feature, latlng) => {
+            //         const color = calculateColor(feature.properties.penguinCount);
+                    
+            //         return L.marker(latlng, { icon: createPopulationIcon(color) }).bindPopup(
+            //             `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${feature.properties.penguinCount}`
+            //         );
+            //         },
+            //     });
+            
+            //     markers.addTo(mapRef.current);
+            
+            //     // Function to create PopulationIcon with dynamic color
+            //     function createPopulationIcon(color) {
+            //         return L.divIcon({
+            //         className: 'population-icon',
+            //         iconSize: [20, 20],
+            //         iconAnchor: [10, 10],
+            //         html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
+            //         });         
+            //     }
+            //ICON COLOUR
+            //END
+
+            //START
+            //ICON SIZE & ICON COLOUR
+            // if (geoJSON && Array.isArray(geoJSON.features)) {
+            //     const markers = L.geoJSON(geoJSON, {
+            //         pointToLayer: (feature, latlng) => {
+            //             const population = feature.properties.penguinCount;
+            //             const color = calculateColor(population);
+            //             const iconSize = calculateIconSize(population);
+            //             return L.marker(latlng, { icon: createPopulationIcon(color, iconSize) }).bindPopup(
+            //                 `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
+            //             );
+            //         },
+            //     });
+                
+            //     markers.addTo(mapRef.current);
+                
+            //     function calculateIconSize(population) {
+            //         const maxSize = 25;
+            //         const minSize = 10; 
+            //         // Assuming penguinCount ranges from 0 to 25000
+            //         const size = Math.max(minSize, (population / 250000) * maxSize); 
+            //         return [size, size];
+            //     }
+            
+            //     function calculateColor(population) {
+            //         const colorScale = scaleLinear()
+            //             .domain([0, 250000])
+            //             //.range(['#add8e6', '#00008b']); //light blue to dark blue
+            //             .range(['#EF81C7', '#97216C']) //secondary colour pink light to dark
+            //         return colorScale(population);
+            //     }
+                
+            //     function createPopulationIcon(color, iconSize) {
+            //         return L.divIcon({
+            //             className: 'population-icon',
+            //             iconSize: iconSize,
+            //             iconAnchor: [iconSize[0] / 2, iconSize[1] / 2], // Centering anchor
+            //             html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
+            //         });         
+            //     }
+            //ICON SIZE & ICON COLOUR
+            //END
+
+            //START
+            //ICON SIZE & ICON COLOUR & 200,000+ RED
             if (geoJSON && Array.isArray(geoJSON.features)) {
                 const markers = L.geoJSON(geoJSON, {
                     pointToLayer: (feature, latlng) => {
-                    const color = calculateColor(feature.properties.penguinCount);
-                    
-                    return L.marker(latlng, { icon: createPopulationIcon(color) }).bindPopup(
-                        `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${feature.properties.penguinCount}`
-                    );
+                        const population = feature.properties.penguinCount;
+                        if (population > 50000) {
+                            // Use a solid red marker for counts exceeding 200,000
+                            return L.marker(latlng, { icon: createRedMarker() }).bindPopup(
+                                `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
+                            );
+                        } else {
+                            // Calculate color and size for counts less than or equal to 200,000
+                            const color = calculateColor(population);
+                            const iconSize = calculateIconSize(population);
+                            return L.marker(latlng, { icon: createPopulationIcon(color, iconSize) }).bindPopup(
+                                `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
+                            );
+                        }
                     },
                 });
-            
+                
                 markers.addTo(mapRef.current);
-            
-                // Function to create PopulationIcon with dynamic color
-                function createPopulationIcon(color) {
+                
+                // Function to create a solid red marker
+                function createRedMarker() {
                     return L.divIcon({
-                    className: 'population-icon',
-                    iconSize: [20, 20],
-                    iconAnchor: [10, 10],
-                    html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
+                        className: 'red-marker',
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10],
+                        html: `<div style="background-color: red; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
                     });         
                 }
+            
+                // Function to calculate icon size based on population
+                function calculateIconSize(population) {
+                    const maxSize = 25; // Maximum icon size
+                    const minSize = 10; // Minimum icon size
+                    // Assuming penguinCount ranges from 0 to 25000
+                    const size = Math.max(minSize, (population / 50000) * maxSize); // Adjusting size proportionally
+                    return [size, size];
+                }
+            
+                // Function to calculate color based on population
+                function calculateColor(population) {
+                    const colorScale = scaleLinear()
+                        .domain([0, 50000])
+                        //.range(['#add8e6', '#00008b']); //light blue to dark blue
+                        .range(['#EF81C7', '#97216C'])
+                    return colorScale(population);
+                }
+                
+                // Function to create PopulationIcon with dynamic size and color
+                function createPopulationIcon(color, iconSize) {
+                    return L.divIcon({
+                        className: 'population-icon',
+                        iconSize: iconSize,
+                        iconAnchor: [iconSize[0] / 2, iconSize[1] / 2], // Centering anchor
+                        html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
+                    });         
+                }
+            //ICON SIZE & ICON COLOUR & 200,000+ RED
+            //END
             }else{
                 console.log("invalid geoJSON format ");
             }
