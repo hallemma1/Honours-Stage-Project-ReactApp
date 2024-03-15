@@ -10,6 +10,7 @@ import Home from './Pages/Home.jsx'
 import MapPage from './Pages/MapPage.jsx'
 import TriviaPage from './Pages/TriviaPage.jsx'
 import BookPage from './Pages/BookPage.jsx';
+import ViewPenguinsPage from './Pages/ViewPenguinsPage.jsx';
 
 // const theme = createTheme({
 //   palette: {
@@ -30,7 +31,8 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Map', path: '/Pages/MapPage' },
   { name: 'Trivia', path: '/Pages/TriviaPage' },
-  { path: '/Pages/BookPage', name: 'Book' },
+  { name: 'Book', path: '/Pages/BookPage' },
+  { name: 'My Penguins', path: '/Pages/ViewPenguinsPage' },
 ];
 
 function App() {
@@ -60,6 +62,7 @@ function App() {
         <Route path="/Pages/MapPage" element={<MapPage />} />
         <Route path="/Pages/TriviaPage" element={<TriviaPage />} />
         <Route path="/Pages/BookPage" element={<BookPage />} />
+        <Route path="/Pages/ViewPenguinsPage" element={<ViewPenguinsPage />} />
       </Routes>
     </Router>
   )

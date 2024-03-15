@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .main-content-container {
     display: flex; 
     height: 100%;
@@ -30,7 +32,7 @@
 .map-container-box-shadow{
     width: 90%;
     height: 100%;
-    box-shadow: 2px 2px 4px 4px var(--lightShadow);
+    box-shadow: 0 0 20px var(--lightShadow);
     background-color: var(--lightGreyBackground);
     border-radius: 20px;
     position: relative;
@@ -51,7 +53,7 @@
 .buttons-panel-container {
     flex: 1;
     display: flex;
-  
+    
 }
 .buttons-container{
     width: 90%;
@@ -64,6 +66,9 @@
     width: 100%; 
     height: 25%;
 }
+.button{
+    font-family: 'Quicksand';
+}
 
 .MapKey{
     flex: 1;
@@ -73,7 +78,7 @@
     
     align-items: center;
     justify-content: center;
-  
+    font-family: 'Quicksand';
 }
 .key-items-container{
     display: flex;
@@ -82,12 +87,41 @@
     justify-content: center;
     height: 90%;
     width: 90%;
-    box-shadow: 2px 2px 4px 4px var(--primaryColor);
+    box-shadow: 0 0 20px rgba(6, 97, 244, 0.2);
     background-color: var(--lightGreyBackground);
     border-radius: 20px;
 }
 .key-item{
-    height: 50px;
+    height: 100%;
     width: 95%;
-    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.key-item-marker-image{
+    width: 40px;
+    height: 40px;
+    background-color: green;
+}
+.key-item-marker-image-gradient{
+    width: 100%;
+    height: 70px;
+}
+.key-item-marker-image-high{
+    background-color: #00B400;
+    border: 1px solid black;
+    border-radius: 100px;
+    width: 45px;
+    height: 45px;
+}
+
+.key-heading{
+    margin-top: 10px;
+    font-size: 25px;
+    color: var(--primaryColor);
+    font-weight: 400;
+}
+.key-item-marker-meaning{
+    font-size: 18px;
 }

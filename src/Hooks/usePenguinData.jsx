@@ -65,6 +65,18 @@ export const usePenguinData = () => {
         }
     };
 
-    return {getInitialData, getYearSelectedData, getPollutionChangeData, getCarbonEmissionsChangeData, getOverfishingChangeData};
+    const getCollectedPenguinsData = async () => {
+        //call
+        try{
+            const response = await api.get('v1/collectedpenguins/collectedpenguindata');
+            console.log('response from get collected penguin data: ', response.data );
+            return response.data;
+        } catch (error){
+            console.log('Error Getting Collected Penguin Data');
+            throw error;
+        }
+    };
+
+    return {getInitialData, getYearSelectedData, getPollutionChangeData, getCarbonEmissionsChangeData, getOverfishingChangeData, getCollectedPenguinsData};
 };
 

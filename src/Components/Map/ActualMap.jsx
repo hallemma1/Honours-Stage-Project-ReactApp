@@ -192,13 +192,18 @@ const ActualMap = ({mapData}) => {
             //END
 
             //START
-            //ICON SIZE & ICON COLOUR & 200,000+ RED
+            //ICON SIZE & ICON COLOUR & 50,000+ GREEN & 0 RED
             if (geoJSON && Array.isArray(geoJSON.features)) {
                 const markers = L.geoJSON(geoJSON, {
                     pointToLayer: (feature, latlng) => {
                         const population = feature.properties.penguinCount;
                         if (population > 50000) {
-                            // Use a solid red marker for counts exceeding 200,000
+                            // Use a solid red marker for counts exceeding X amount
+                            return L.marker(latlng, { icon: createGreenMarker() }).bindPopup(
+                                `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
+                            );
+                        } else if(population == 0)
+                        {
                             return L.marker(latlng, { icon: createRedMarker() }).bindPopup(
                                 `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
                             );
@@ -216,12 +221,35 @@ const ActualMap = ({mapData}) => {
                 markers.addTo(mapRef.current);
                 
                 // Function to create a solid red marker
+                function createRedCircleMarker() {
+                    return L.divIcon({
+                        className: 'red-marker',
+                        iconSize: [15, 15],
+                        iconAnchor: [10, 10],
+                        html: `<div style="background-color: red; border: 1px solid black; width: 15px; height: 15px;"></div>`,
+                    });         
+                }
                 function createRedMarker() {
                     return L.divIcon({
                         className: 'red-marker',
                         iconSize: [20, 20],
                         iconAnchor: [10, 10],
-                        html: `<div style="background-color: red; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
+                        //html: `<div style="background-color: red; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
+                        html: `<svg width="30" height="30" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <polygon points="10,0 20,10 10,20 0,10" fill="#FF0000" stroke="#000000" stroke-width="1"/>
+                        </svg>`
+                    });         
+                }
+                //straight triangle:   <polygon points="10,0 20,20 0,20" fill="#FF0000" stroke="#000000" stroke-width="1"/>
+                //diamond: <polygon points="10,0 20,10 10,20 0,10" fill="#FF0000" stroke="#000000" stroke-width="1"/>
+                //square: 
+
+                function createGreenMarker() {
+                    return L.divIcon({
+                        className: 'green-marker',
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10],
+                        html: `<div style="background-color: #00B400; border: 1px solid black; border-radius: 10px; width: 20px; height: 20px;"></div>`,
                     });         
                 }
             

@@ -1,0 +1,9 @@
+.ViewPenguinsPage{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    background-color: green;
+    align-items: center;
+    justify-content: center;
+}

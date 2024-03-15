@@ -1,27 +1,11 @@
 import './WelcomeStyles.css';
 import '../../Pages/PagesStyles/Home.css';
 import PenguinCharacter from '../../assets/penguin-2.png';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 
 export default function WelcomeComponent() {
-//   const [penguinDetails, setPenguinDetails] = useState('Unknown Penguin');
-//   const [scoreDetails, setScoreDetails] = useState('Unknown Score');
-//   const { search } = useLocation();
-//   const params = new URLSearchParams(search);
-//   const navigate = useNavigate();
 
-
-//   useEffect(() => {
-//     const penguinName = params.get('penguinName') || 'Unknown Penguin';
-//     setPenguinDetails(penguinName);
-
-//     const score = params.get('score') || 'Unknown Score';
-//     setScoreDetails(score);
-
-//     navigate(`/penguinName=${penguinName}&score=${score}`);
-//   }, [params]);
 
   return (
     <div className="welcome-component">
@@ -35,6 +19,9 @@ export default function WelcomeComponent() {
             You played as  and caught  fish!
           </h3>
         </div>
+      </div>
+      <div className='WelcomeComponent-button-container'>
+        <button>View Collected Penguins</button>
       </div>
     </div>
   );
