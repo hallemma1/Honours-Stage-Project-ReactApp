@@ -11,14 +11,10 @@ import '../MainContent/MainContent.css'
 
 
 const ActualMap = ({mapData}) => {
-    console.log("mapData from prop: ", mapData);
     const mapRef = useRef(null);
 
     useEffect(() => {
-        console.log("test1");
-        console.log("mapData in useEffect: ", mapData);
         if (!Array.isArray(mapData)) {
-            console.log("test2");
           const geoJSON = {
             type: 'FeatureCollection',
             features: mapData.dataObject.map(dataPoint => ({
@@ -36,9 +32,7 @@ const ActualMap = ({mapData}) => {
               },
             })),
           };
-          console.log("geojson: ", geoJSON);
  
-
             const proj = 'EPSG:3031';
             const proj4 =
             '+proj=stere +lat_0=-90 +lat_ts=-71 +lon_0=0 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs';

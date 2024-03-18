@@ -13,16 +13,11 @@ const MainContent = () => {
   const {getInitialData} = usePenguinData(); 
 
   useEffect(() => {
-    const  fetchData = async() => {
-      const lines = await fetchLabels();
-      setLabels(lines);
-    }
     const fetchInitialData = async () => {
       const data = await getInitialData();
       updateMapData(data);    
     };
 
-    fetchData();
     fetchInitialData();
 
   }, []);
@@ -33,8 +28,6 @@ const MainContent = () => {
   };
 
 
-
-    console.log("intial dtaa inside main content:", mapData);
   return (
     <>
     <div className="main-content-container">

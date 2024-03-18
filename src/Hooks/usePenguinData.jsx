@@ -77,6 +77,18 @@ export const usePenguinData = () => {
         }
     };
 
-    return {getInitialData, getYearSelectedData, getPollutionChangeData, getCarbonEmissionsChangeData, getOverfishingChangeData, getCollectedPenguinsData};
+    const addCollectedPenguin = async (penguinName, score) => {
+        //call
+        try{
+            const response = await api.post(`v1/collectedpenguins/collectedpenguindata?penguinName=${penguinName}&score=${score}`);
+            console.log('response from adding collected penguin: ', response.data );
+            return response.data;
+        } catch (error){
+            console.log('Error Adding Collected Penguin');
+            throw error;
+        }
+    };
+
+    return {getInitialData, getYearSelectedData, getPollutionChangeData, getCarbonEmissionsChangeData, getOverfishingChangeData, getCollectedPenguinsData, addCollectedPenguin};
 };
 

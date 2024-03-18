@@ -1,31 +1,13 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { indigo, lightBlue } from '@mui/material/colors';
 import NavBar from './Components/Nav/NavBar.jsx'
 import Home from './Pages/Home.jsx'
 import MapPage from './Pages/MapPage.jsx'
 import TriviaPage from './Pages/TriviaPage.jsx'
 import BookPage from './Pages/BookPage.jsx';
 import ViewPenguinsPage from './Pages/ViewPenguinsPage.jsx';
-
-// const theme = createTheme({
-//   palette: {
-//     primary: {
-//       main: '#0661F4'
-//     },
-//     secondary: {
-//       main: '#FC9F22'
-//     }
-    
-//   },
-//   typography:{
-//     fontFamily: 'Rubik'
-//   }
-// })
+import { usePenguinData } from './Hooks/usePenguinData';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -35,37 +17,95 @@ const navItems = [
   { name: 'My Penguins', path: '/Pages/ViewPenguinsPage' },
 ];
 
+
 function App() {
-  // const [penguinDetails, setPenguinDetails] = useState('Unknown Penguin');
-  // const [scoreDetails, setScoreDetails] = useState('Unknown Score');
-  // const { search } = useLocation();
-  // const params = new URLSearchParams(search);
-  // const navigate = useNavigate();
+  const [penguinDetails, setPenguinDetails] = useState("m");
+  const [scoreDetails, setScoreDetails] = useState('Original Unknown Score');
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const navigate = useNavigate();
 
+  const { addCollectedPenguin } = usePenguinData();
+  const isFirstTime = !sessionStorage.getItem('penguinName');
+  console.log(isFirstTime);
+  useEffect(() => {
+    const storedPenguinName = sessionStorage.getItem('penguinName');
+    const storedScore = sessionStorage.getItem('score');
 
-  // useEffect(() => {
-  //   const penguinName = params.get('penguinName') || 'Unknown Penguin';
-  //   setPenguinDetails(penguinName);
+    if (!isFirstTime) {
+      // Use stored data if not the first time
+      setPenguinDetails(storedPenguinName);
+      setScoreDetails(storedScore);
+    } else {
+      // First visit: Update state, local storage, and send request
+      const penguinName = params.get("penguinName") || 'Unknown Penguin';
+      const score = params.get('score') || 'Unknown Score';
 
-  //   const score = params.get('score') || 'Unknown Score';
-  //   setScoreDetails(score);
+      setPenguinDetails(penguinName);
+      setScoreDetails(score);
 
-  //   navigate(`/penguinName=${penguinName}&score=${score}`);
-  // }, [params]);
+      sessionStorage.setItem('penguinName', penguinName);
+      sessionStorage.setItem('score', score);
+      console.log("storage name and score: ", penguinName, score);
 
+      // Send request to update data
+      const response = addCollectedPenguin(penguinName, score);
+      console.log(response);
+    }
+  }, [params]);
 
   return (
-    <Router>
+    <>
       <NavBar navItems={navItems} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home penguinDetails={penguinDetails} scoreDetails={scoreDetails} />}
+        />
         <Route path="/Pages/MapPage" element={<MapPage />} />
         <Route path="/Pages/TriviaPage" element={<TriviaPage />} />
         <Route path="/Pages/BookPage" element={<BookPage />} />
         <Route path="/Pages/ViewPenguinsPage" element={<ViewPenguinsPage />} />
       </Routes>
-    </Router>
-  )
+    </>
+  );
 }
 
 export default App
+
+
+
+// function App() {
+//   const [penguinDetails, setPenguinDetails] = useState('Unknown Penguin');
+//   const [scoreDetails, setScoreDetails] = useState('Unknown Score');
+//   const { search } = useLocation();
+//   const params = new URLSearchParams(search);
+//   const navigate = useNavigate();
+
+
+//   useEffect(() => {
+//     const penguinName = params.get('penguinName') || 'Unknown Penguin';
+//     setPenguinDetails(penguinName);
+
+//     const score = params.get('score') || 'Unknown Score';
+//     setScoreDetails(score);
+
+//     navigate(`/penguinName=${penguinName}&score=${score}`);
+//   }, [params]);
+
+
+//   return (
+//     <Router>
+//       <NavBar navItems={navItems} />
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/Pages/MapPage" element={<MapPage />} />
+//         <Route path="/Pages/TriviaPage" element={<TriviaPage />} />
+//         <Route path="/Pages/BookPage" element={<BookPage />} />
+//         <Route path="/Pages/ViewPenguinsPage" element={<ViewPenguinsPage />} />
+//       </Routes>
+//     </Router>
+//   )
+// }
+
+// export default App

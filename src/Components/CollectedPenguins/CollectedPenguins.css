@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .collected-penguins-comp{
     width: 100%;
     height: 100%;
@@ -7,6 +9,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
     padding: 50px;
+    background-color: var(--backgroundColor);
 }
 .collected-penguin-card {
     width: 100%;
@@ -28,6 +31,7 @@
     font-size: 24px;
     text-align: center;
     width: 100%;
+    font-family: 'Quicksand';
 }
   
 .penguin-image {
@@ -43,12 +47,38 @@
 .penguin-image img {
     max-width: 80%; /* Limit the maximum width of the image to 100% of its container */
     max-height: 80%; /* Limit the maximum height of the image to 100% of its container */
+    margin-bottom: 20px;
 }
   
 .collected-count {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    padding: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background-color: var(--primaryColor);
+}
+
+.collected-penguin-score-container{
+    position: absolute;
+    display: flex;
+    bottom: -5px;
+    right: 0;
+    flex-direction: row;
+    margin-right: 15px;
+    align-items: baseline;
+}
+.collected-penguin-score-word{
+    padding-right: 5px;
+    font-family: 'Quicksand';
+    font-size: 15px;
+}
+
+.collected-penguin-score-value{
+    font-size: 30px;
+    font-family: 'Quicksand';
 }
   
