@@ -11,6 +11,7 @@
 .NavBar-heading{
     display: flex;
     margin-left: 15px;
+    cursor: default;
 }
 .NavBar-heading-icon{
     width: 60px;

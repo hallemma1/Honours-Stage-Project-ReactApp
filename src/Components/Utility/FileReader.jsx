@@ -1,15 +1,15 @@
 // fileUtils.js
 
-async function fetchLabels() {
+async function fetchAboutText() {
     try {
-      const response = await fetch('../../ButtonLabels.txt');
+      const response = await fetch('../../AboutText.txt');
       const text = await response.text();
-      return text.split('\n');
+      return text;
     } catch (error) {
       console.error('Error reading the file:', error);
       return [];
     }
   }
   
-  export { fetchLabels };
+  export { fetchAboutText };
   

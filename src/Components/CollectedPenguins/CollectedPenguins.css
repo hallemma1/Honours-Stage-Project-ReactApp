@@ -10,6 +10,7 @@
     gap: 50px;
     padding: 50px;
     background-color: var(--backgroundColor);
+    cursor: default;
 }
 .collected-penguin-card {
     width: 100%;

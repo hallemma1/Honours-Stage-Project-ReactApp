@@ -2,7 +2,7 @@ import Map from '../Map/Map';
 import ButtonsPanel from '../ButtonsPanel/ButtonsPanel';
 import MapKey from '../MapKey/MapKey';
 import './MainContent.css';
-import { fetchLabels } from '../Utility/FileReader';
+
 import React, { useEffect, useState } from 'react';
 import SliderComp from '../Slider/SliderComp';
 import { usePenguinData } from '../../Hooks/usePenguinData';

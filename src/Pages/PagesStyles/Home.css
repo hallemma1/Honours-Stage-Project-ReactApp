@@ -45,9 +45,7 @@
     font-size: 22px;
     border-color: var(--secondaryColor);
 }
-.HomePage-Buttons-map{
-   
-}
+
 .HomePage-Buttons-penguins:hover, .HomePage-Buttons-map:hover{
     background-color: var(--secondaryColorLight);
     color: var(--textColorLight);

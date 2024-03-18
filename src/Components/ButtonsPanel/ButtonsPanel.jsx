@@ -4,7 +4,6 @@ import { usePenguinData } from '../../Hooks/usePenguinData';
 import { useEffect } from 'react';
 
 const ButtonsPanel = ({updateMapData}) => {
-    //labels
 
     const {getPollutionChangeData} = usePenguinData(); 
     const {getCarbonEmissionsChangeData} = usePenguinData(); 
@@ -34,8 +33,6 @@ const ButtonsPanel = ({updateMapData}) => {
         updateMapData(data);
         console.log("reset:", data);
       };
-
-//
 
 return (
     <div className="buttons-panel-container"> 
