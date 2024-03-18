@@ -3,11 +3,8 @@ import L, { geoJSON } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'proj4leaflet';
 import 'leaflet-polar-graticule';
-import { usePenguinData } from '../../Hooks/usePenguinData';
 import {scaleLinear} from "d3-scale";
-import { interpolateBlues } from 'd3-scale-chromatic';
 import '../MainContent/MainContent.css'
-
 
 
 const ActualMap = ({mapData}) => {
@@ -205,7 +202,7 @@ const ActualMap = ({mapData}) => {
                             // Calculate color and size for counts less than or equal to 200,000
                             const color = calculateColor(population);
                             const iconSize = calculateIconSize(population);
-                            return L.marker(latlng, { icon: createPopulationIcon(color, iconSize) }).bindPopup(
+                            return L.marker(latlng, { icon: createPopulationIcon(color, iconSize, population) }).bindPopup(
                                 `<strong>${feature.properties.siteName}</strong><br>Penguin Count: ${population}`
                             );
                         }
@@ -266,14 +263,32 @@ const ActualMap = ({mapData}) => {
                 }
                 
                 // Function to create PopulationIcon with dynamic size and color
-                function createPopulationIcon(color, iconSize) {
+                // function createPopulationIcon(color, iconSize) {
+                //     return L.divIcon({
+                //         className: 'population-icon',
+                //         iconSize: iconSize,
+                //         iconAnchor: [iconSize[0] / 2, iconSize[1] / 2], // Centering anchor
+                //         html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
+                //     });         
+                // }
+                function createPopulationIcon(color, iconSize, population) {
+                    let opacity = 1; // default opacity
+                
+                    // Adjust opacity for population counts between 0 and 50,000
+                    if (population > 0 && population <= 50000) {
+                        // Calculate opacity based on population
+                        opacity = population / 50000; // Opacity ranges from 0 to 1 as population increases
+                    }
+                
                     return L.divIcon({
                         className: 'population-icon',
                         iconSize: iconSize,
                         iconAnchor: [iconSize[0] / 2, iconSize[1] / 2], // Centering anchor
+                        // html: `<div style="background-color: ${color}; opacity: ${opacity}; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
                         html: `<div style="background-color: ${color}; border: 1px solid black; border-radius: 50%; width: ${iconSize[0]}px; height: ${iconSize[1]}px;"></div>`,
                     });         
                 }
+                
             //ICON SIZE & ICON COLOUR & 200,000+ RED
             //END
             }else{

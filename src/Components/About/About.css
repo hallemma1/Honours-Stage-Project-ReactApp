@@ -1,19 +1,22 @@
-.AboutComponent{
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
-    width: 100%;
-    background-color: red;
+.AboutComponent{
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-right: 30px;
+    margin-top: 40px;
+    text-align: center;
 }
 .AboutComponent-heading{
-    font-size: 40px;
+    font-size: 35px;
+    font-family: 'Quicksand';
+    color: var(--primaryColor);
 }
 .AboutComponent-paragraph{
-    width: 90%;
     display: flex;
     position: relative;
-    background-color: antiquewhite;
+    font-family: 'Quicksand';
 }

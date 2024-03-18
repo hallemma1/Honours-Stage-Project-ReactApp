@@ -82,3 +82,22 @@
     font-family: 'Quicksand';
 }
   
+
+.collected-penguins-comp-key-container{
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.collected-penguins-comp-key{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: var(--primaryColor);
+    margin-right: 5px;
+}
+.collected-penguins-comp-key-meaning{
+    font-family: 'Quicksand';
+    font-size: 20px;
+}

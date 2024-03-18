@@ -12,9 +12,8 @@ import { usePenguinData } from './Hooks/usePenguinData';
 const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Map', path: '/Pages/MapPage' },
-  { name: 'Trivia', path: '/Pages/TriviaPage' },
-  { name: 'Book', path: '/Pages/BookPage' },
   { name: 'My Penguins', path: '/Pages/ViewPenguinsPage' },
+  
 ];
 
 
@@ -72,40 +71,3 @@ function App() {
 }
 
 export default App
-
-
-
-// function App() {
-//   const [penguinDetails, setPenguinDetails] = useState('Unknown Penguin');
-//   const [scoreDetails, setScoreDetails] = useState('Unknown Score');
-//   const { search } = useLocation();
-//   const params = new URLSearchParams(search);
-//   const navigate = useNavigate();
-
-
-//   useEffect(() => {
-//     const penguinName = params.get('penguinName') || 'Unknown Penguin';
-//     setPenguinDetails(penguinName);
-
-//     const score = params.get('score') || 'Unknown Score';
-//     setScoreDetails(score);
-
-//     navigate(`/penguinName=${penguinName}&score=${score}`);
-//   }, [params]);
-
-
-//   return (
-//     <Router>
-//       <NavBar navItems={navItems} />
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/Pages/MapPage" element={<MapPage />} />
-//         <Route path="/Pages/TriviaPage" element={<TriviaPage />} />
-//         <Route path="/Pages/BookPage" element={<BookPage />} />
-//         <Route path="/Pages/ViewPenguinsPage" element={<ViewPenguinsPage />} />
-//       </Routes>
-//     </Router>
-//   )
-// }
-
-// export default App

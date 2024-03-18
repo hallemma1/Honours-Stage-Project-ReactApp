@@ -11,8 +11,49 @@
 .HomePage-content{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
+    cursor: default;
 }
+.HomePage-lower-section{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+.HomePage-lower-section-right-side{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 30px;
+}
+.HomePage-lower-section-right-top{
+    flex-direction: row;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.HomePage-lower-section-right-top a{
+    width: 90%;
+}
+.HomePage-Buttons-penguins, .HomePage-Buttons-map{
+    width: 90%;
+    height: 90px;
+    border-radius: 30px;
+    background-color: var(--lightGreyBackground);
+    font-family: 'Quicksand';
+    color: var(--secondaryColor);
+    font-size: 22px;
+    border-color: var(--secondaryColor);
+}
+.HomePage-Buttons-map{
+   
+}
+.HomePage-Buttons-penguins:hover, .HomePage-Buttons-map:hover{
+    background-color: var(--secondaryColorLight);
+    color: var(--textColorLight);
+}
+
+
 
 
 .welcome-component{
@@ -41,14 +82,14 @@
 }
 
 .carousel-container{
-    flex: 3;
+    flex: 2;
     height: 70vh;
     display: flex;
     position: relative;
     justify-content: center;
 }
 .CarouselImage-image-container {
-    width: 80vw; 
+    width: 60vw; 
     height: 70vh;
     position: relative;
     display: flex;

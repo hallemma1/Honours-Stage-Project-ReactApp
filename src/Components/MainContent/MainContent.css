@@ -96,8 +96,28 @@
     width: 95%;
     display: flex;
     flex-direction: column;
+    flex: 4;
     justify-content: center;
     align-items: center;
+}
+.key-item-instruction{
+    display: flex;
+    flex: 2;
+    width: 95%;
+}
+.key-item-instruction-meaning{
+    flex: 10;
+    text-align: center;
+    cursor: default;
+   
+}
+.key-item-instruction-symbol{
+    flex: 1;
+}
+.key-item-instruction-symbol svg{
+    width: 100%;
+    height: 35px;
+    margin-left: 15px;
 }
 .key-item-marker-image{
     width: 40px;
@@ -115,13 +135,83 @@
     width: 45px;
     height: 45px;
 }
-
 .key-heading{
     margin-top: 10px;
     font-size: 25px;
     color: var(--primaryColor);
     font-weight: 400;
+    cursor: default;
+    margin-bottom: 10px;
 }
 .key-item-marker-meaning{
     font-size: 18px;
+    cursor: default;
 }
+
+
+.color-gradiant-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px; 
+}
+  
+.color-gradient {
+    width: 90%;
+    height: 30px; 
+    background: linear-gradient(to right, var(--secondaryColorLight), var(--secondaryColorDark)); 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.color-gradiant-label-low{
+    position: absolute;
+    color: var(--textColorLight);
+    margin-left: 5px;
+    cursor: default;
+}
+.color-gradiant-label-high{
+    position: absolute;
+    right: 0;
+    margin-right: 40px;
+    color: var(--textColorLight);
+    cursor: default;
+}
+  
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; 
+}
+.circle {
+    width: 15px; 
+    height: 15px; 
+    border-radius: 50%;
+    margin: 0 5px; 
+}
+.circle:nth-child(2) {
+    width: 20px;
+    height: 20px;
+}
+.circle:nth-child(3) {
+    width: 25px;
+    height: 25px;
+}
+.circle:nth-child(4) {
+    width: 30px;
+    height: 30px;
+}
+.circle:nth-child(5) {
+    width: 35px;
+    height: 35px;
+}
+.circle:nth-child(6) {
+    width: 40px;
+    height: 40px;
+}
+  
+  /* Add more styling for additional circles as needed */
+  

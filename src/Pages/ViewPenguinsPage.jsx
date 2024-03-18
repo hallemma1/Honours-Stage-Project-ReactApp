@@ -28,6 +28,7 @@ export default function ViewPenguinsPage() {
 return (
     <div className="ViewPenguinPage">
         <CollectedPenguinsComponent data={collectedPenguinsData}/>
+        
     </div>
     
 )}
