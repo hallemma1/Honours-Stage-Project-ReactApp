@@ -6,7 +6,8 @@ import logo from '../../assets/penguin-logo.png'
 export default function NavBar({ navItems}) {
 
   return (
-    <div className="NavBar">
+    <>
+      <div className="NavBar">
       <div className="NavBar-heading">
         <img src={logo} alt="alternatetext" className="NavBar-heading-icon"></img>
         <div className='NavBar-heading-text'>Penguins</div>
@@ -23,5 +24,21 @@ export default function NavBar({ navItems}) {
         ))}
       </div>
     </div>
+
+    <div className='NavBar-mobile'>
+      <div className="NavBar-heading">
+          <img src={logo} alt="alternatetext" className="NavBar-heading-icon"></img>
+          <div className='NavBar-heading-text'>Penguins</div>
+      </div>
+      <div className='NavBar-items'>
+        <NavLink
+          to={'/'}
+          className="navlink">
+            <NavItem name={'Home'}></NavItem>
+        </NavLink>
+      </div>
+    </div>
+
+    </>
   );
 }

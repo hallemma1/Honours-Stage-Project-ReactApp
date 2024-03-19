@@ -1,5 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
+/* For screens smaller than 768px (typical mobile screens) */
+@media only screen and (max-width: 768px) {
+    .Home-page {
+        display: none !important; 
+    }
+    .Home-page-mobile {
+        display: flex !important; 
+    }
+}
+  
+  /* For screens larger than 768px */
+@media only screen and (min-width: 769px) {
+    .Home-page {
+      display: block !important; 
+    }
+    .Home-page-mobile {
+      display: none !important; 
+    }
+}
+  
+  
+  
+.Home-page-mobile{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: default;
+    align-items: center;
+}
+.home-page-mobile-penguin-image{
+    width: 7em;
+    height: 7em;
+    margin-top: 20px;
+}
+.home-page-mobile-penguin-image img{
+    width: 100%;
+    height: 100%;
+}
+.home-page-mobile-welcome-text{
+    margin-top: 20px;
+    font-family: 'Quicksand';
+    font-size: 18px;
+}
+.home-page-mobile-transfer-text{
+    margin-top: 20px;
+    font-family: 'Quicksand';
+    font-size: 20px;
+}
+
+
+
 .Home-page{
     width: 100vw;
     height: calc(100vh - 70px);
