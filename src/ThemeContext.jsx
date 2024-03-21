@@ -12,6 +12,7 @@ export const ThemeProvider = ({ children }) => {
     secondaryColorDark: '#97216C',
     textColorDark: '#000',
     textColorLight: '#FFF',
+    textColorDarkGrey: '#666',
     backgroundColor: '#FFF',
     lightGreyBackground: '#FAFAFA',
     lightShadow: '#EBEBEB',

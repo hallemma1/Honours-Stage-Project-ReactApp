@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import { usePenguinData } from '../../Hooks/usePenguinData';
 
-export default function SliderComp({updateMapData}) {
+export default function SliderComp({updateMapData, updateSelectedButton}) {
   const {getYearSelectedData} = usePenguinData(); 
 
   const [sliderValue, setSliderValue] = useState();
@@ -20,6 +20,7 @@ export default function SliderComp({updateMapData}) {
   const handleSliderChange = (event, newValue) => {
     setSliderValue(newValue);
     fetchData(newValue);
+    updateSelectedButton('');
   };
 
 
@@ -29,7 +30,7 @@ export default function SliderComp({updateMapData}) {
     { value: 1955, label: '1955', },
     { value: 1960, label: '1960', },
     { value: 1965, label: '1965', },
-    { value: 1970, label: '1975', },
+    { value: 1970, label: '1970', },
     { value: 1975, label: '1975', },
     { value: 1980, label: '1980', },
     { value: 1985, label: '1985', },

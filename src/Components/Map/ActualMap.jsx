@@ -43,7 +43,7 @@ const ActualMap = ({mapData}) => {
             if (!mapRef.current) {
             const mapInstance = L.map('map', {
                 crs: crs,
-                center: [-91, 10],
+                center: [-91, 80],
                 zoom: 0,
             });
 
@@ -166,8 +166,8 @@ const ActualMap = ({mapData}) => {
             //     function calculateColor(population) {
             //         const colorScale = scaleLinear()
             //             .domain([0, 250000])
-            //             //.range(['#add8e6', '#00008b']); //light blue to dark blue
-            //             .range(['#EF81C7', '#97216C']) //secondary colour pink light to dark
+            //             .range(['#add8e6', '#00008b']); //light blue to dark blue
+            //             //.range(['#EF81C7', '#97216C']) //secondary colour pink light to dark
             //         return colorScale(population);
             //     }
                 

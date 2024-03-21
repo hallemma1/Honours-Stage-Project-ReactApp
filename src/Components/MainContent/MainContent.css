@@ -6,7 +6,7 @@
     width: 100%;
     position: relative;
     flex-direction: column;
-    padding-top: 15px;
+   
 }
 .main-content-container-top{
     display: flex;
@@ -16,18 +16,25 @@
     flex: 1; /* Adjust the flex value as needed */
 
 }
+.main-content-info{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: var(--textColorDarkGrey);
+    flex: 0.5;
 
+}
 
 
 .map-container {
     flex: 3; 
-    height: 75vh;
+    height: 73vh;
     justify-content: center;
     align-items: center;
     display: flex;
     position: relative;
-    
-    top: -5px;
+    margin-top: -10px;
 }
 .map-container-box-shadow{
     width: 90%;

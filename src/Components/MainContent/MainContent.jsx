@@ -27,17 +27,40 @@ const MainContent = () => {
     setMapData(newData);
   };
 
+  const [selectedButton, setSelectedButton] = useState('');
+  const updateSelectedButton = (newSelection) => {
+    setSelectedButton(newSelection);
+  };
+
 
   return (
     <>
     <div className="main-content-container">
+      <div className='main-content-info'>
+        {selectedButton == "pollution" ? (
+        <div className='main-content-info'>
+          Showing penguin populations increased by 20%!
+        </div>): null}
+        {selectedButton == "carbon" ? (
+        <div className='main-content-info'>
+          Showing penguin populations increased by 25%!
+        </div>): null}
+        {selectedButton == "overfishing" ? (
+        <div className='main-content-info'>
+          Showing penguin populations increased by 15%!
+        </div>): null}
+        {selectedButton == "" ? (
+        <div className='main-content-info'>
+          
+        </div>): null}
+      </div>
       <div className='main-content-container-top'>
         <MapKey/>
         <Map mapData={mapData} />
-        <ButtonsPanel updateMapData={updateMapData}/>
+        <ButtonsPanel updateMapData={updateMapData} updateSelectedButton={updateSelectedButton}/>
       </div>
       <div className='main-content-container-bottom'>
-        <SliderComp updateMapData={updateMapData} />
+        <SliderComp updateMapData={updateMapData} updateSelectedButton={updateSelectedButton}/>
       </div>
     </div>
     

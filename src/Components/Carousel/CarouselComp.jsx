@@ -6,7 +6,9 @@ import JumpingGentoo from '../../assets/jumping-gentoo.jpeg';
 import LandscapePenguins from '../../assets/landscape-penguins.jpeg'
 import PenguinEating from '../../assets/penguin-eating.jpeg'
 import PenguinRunning from '../../assets/penguin-running.jpeg'
-import UnderwaterSwimming from '../../assets/underwater-swimming.jpeg'
+import UnderwaterSwimming from '../../assets/underwater-swimming.jpeg';
+import PenguinShouting from '../../assets/penguin-shouting.jpg';
+import PenguinPebble from '../../assets/penguin-pebble.jpg';
 import { useState } from 'react';
 import '../../Pages/PagesStyles/Home.css'
 
@@ -24,21 +26,30 @@ function CarouselComp() {
       <Carousel.Item>
         <CarouselImage text="First slide" imagePath={JumpingGentoo}/>
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Gentoo Penguin Diving into Water</h3>
+          <p>gentoo penguins are the fastest swimmers at 22mph</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <CarouselImage text="First slide" imagePath={LandscapePenguins}/>
+        <CarouselImage text="First slide" imagePath={PenguinPebble}/>
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Gentoo Penguin Preparing for Courtship</h3>
+          <p>some penguins offer pebbles to mates to try and impress them.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <CarouselImage text="First slide" imagePath={PenguinEating}/>
         <Carousel.Caption>
           <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <CarouselImage text="Fourth slide" imagePath={PenguinShouting}/>
+        <Carousel.Caption>
+          <h3>Fourth slide label</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
