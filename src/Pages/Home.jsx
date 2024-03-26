@@ -43,11 +43,17 @@ return (
             </div>
         </div>
         <div className='Home-page-mobile'>
-            <div className='home-page-mobile-penguin-image'>
-                <img src={PenguinCharacter} alt="penguin character image" className='mobile-penguin-image' />
+            <div className='home-page-mobile-box-shadow'>
+                <div className='home-page-mobile-penguin-image'>
+                    <img src={PenguinCharacter} alt="penguin character image" className='mobile-penguin-image' />
+                </div>
+                <div className='home-page-mobile-welcome-text'>You played as {penguinDetails} and caught {scoreDetails} fish!</div>
             </div>
-            <div className='home-page-mobile-welcome-text'>You played as {penguinDetails} and caught {scoreDetails} fish!</div>
             <div className='home-page-mobile-transfer-text'>Transfer to laptop or desktop:</div>
+            <div className='home-page-mobile-transfer-text-warning'>*IMPORTANT* 
+                <div className='home-page-mobile-transfer-text-warning'>the web address is case sensitive so much be the same as below</div>
+            </div>
+            <div className='home-page-mobile-transfer-text-address'>150.237.94.71?penguinName={penguinDetails}&score={scoreDetails}</div>
         </div>
     </>
 )}

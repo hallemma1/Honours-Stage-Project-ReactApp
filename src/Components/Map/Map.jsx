@@ -1,6 +1,4 @@
 
-
-import './Map.css'
 import '../MainContent/MainContent.css'
 
 import ActualMap from './ActualMap';

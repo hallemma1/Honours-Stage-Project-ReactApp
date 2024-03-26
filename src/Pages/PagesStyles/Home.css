@@ -32,6 +32,19 @@
     cursor: default;
     align-items: center;
 }
+.home-page-mobile-box-shadow{
+    width: 60%;
+    height: 40%;
+    box-shadow: 0 0 20px #d2d2d2;
+    background-color: var(--lightGreyBackground);
+    border-radius: 20px;
+    border: #B1CFFF 1px solid;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
 .home-page-mobile-penguin-image{
     width: 7em;
     height: 7em;
@@ -47,9 +60,25 @@
     font-size: 18px;
 }
 .home-page-mobile-transfer-text{
-    margin-top: 20px;
+    margin-top: 40px;
     font-family: 'Quicksand';
     font-size: 20px;
+    margin-bottom: 20px;
+}
+.home-page-mobile-transfer-text-warning{
+    font-family: 'Quicksand';
+    font-size: 15px;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home-page-mobile-transfer-text-address{
+    margin-top: 5px;
+    font-family: 'Quicksand';
+    font-size: 24px;
+    color: var(--primaryColorDark);
 }
 
 
@@ -141,6 +170,18 @@
     position: relative;
     justify-content: center;
 }
+.carousel-buttons-container{
+    position: absolute;
+    display: flex;
+    top: 0;   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.carousel-button svg{
+    width: 2em;
+    height: 2em;
+}
 .CarouselImage-image-container {
     width: 60vw; 
     height: 70vh;
@@ -155,7 +196,6 @@
 }
 .carousel-container h3, .carousel-container p{
     color: var(--primaryColor);
-
 }
 .carousel-caption{
     background-color: rgba(200, 200, 200, 0.5);

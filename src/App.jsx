@@ -26,7 +26,7 @@ function App() {
 
   const { addCollectedPenguin } = usePenguinData();
   const isFirstTime = !sessionStorage.getItem('penguinName');
-  console.log(isFirstTime);
+  //console.log(isFirstTime);
   useEffect(() => {
     const storedPenguinName = sessionStorage.getItem('penguinName');
     const storedScore = sessionStorage.getItem('score');
