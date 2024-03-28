@@ -51,9 +51,9 @@ return (
             </div>
             <div className='home-page-mobile-transfer-text'>Transfer to laptop or desktop:</div>
             <div className='home-page-mobile-transfer-text-warning'>*IMPORTANT* 
-                <div className='home-page-mobile-transfer-text-warning'>the web address is case sensitive so much be the same as below</div>
+                <div className='home-page-mobile-transfer-text-warning'>the web address is case sensitive so must be the same as below</div>
             </div>
-            <div className='home-page-mobile-transfer-text-address'>150.237.94.71?penguinName={penguinDetails}&score={scoreDetails}</div>
+            <div className='home-page-mobile-transfer-text-address'>gommy3009wol.ddns.net:5173/?penguinName={penguinDetails}&score={scoreDetails}</div>
         </div>
     </>
 )}

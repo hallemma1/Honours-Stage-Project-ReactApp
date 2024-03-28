@@ -51,6 +51,8 @@
     width: 95%;
     height: 95%;
     position: absolute;
+    background-color: rgb(215, 234, 247);
+    border-radius: 20px;
 }
 .leaflet-container{
     border-radius: 15px;
@@ -82,7 +84,7 @@
     height: 100%;
     display: flex;
     position: relative;
-    
+    text-align: center;
     align-items: center;
     justify-content: center;
     font-family: 'Quicksand';
@@ -186,7 +188,7 @@
     color: var(--textColorLight);
     cursor: default;
 }
-  
+/*   
 .circle-container {
     display: flex;
     justify-content: center;
@@ -218,7 +220,85 @@
 .circle:nth-child(6) {
     width: 40px;
     height: 40px;
-}
+} */
   
   /* Add more styling for additional circles as needed */
-  
+  /* Default styling for circles */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px; 
+}
+
+/* Common styling for all circles */
+.circle {
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+/* Define sizes for different screen sizes */
+.circle:nth-child(1) {
+    width: 15px;
+    height: 15px;
+}
+
+.circle:nth-child(2) {
+    width: 20px;
+    height: 20px;
+}
+
+.circle:nth-child(3) {
+    width: 25px;
+    height: 25px;
+}
+
+.circle:nth-child(4) {
+    width: 30px;
+    height: 30px;
+}
+
+.circle:nth-child(5) {
+    width: 35px;
+    height: 35px;
+}
+
+.circle:nth-child(6) {
+    width: 40px;
+    height: 40px;
+}
+
+/* Media query for tablet-sized screens */
+@media only screen and (max-width: 1200px) {
+    .circle:nth-child(1) {
+        width: 10px;
+        height: 10px;
+    }
+    .circle:nth-child(2) {
+        width: 12px;
+        height: 12px;
+    }
+    .circle:nth-child(3) {
+        width: 16px;
+        height: 16px;
+    }
+    .circle:nth-child(4) {
+        width: 20px;
+        height: 20px;
+    }
+    .circle:nth-child(5) {
+        width: 24px;
+        height: 24px;
+    }
+    .circle:nth-child(6) {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media only screen and (max-height: 700px) {
+
+    .map-container{
+        margin-top: 0;
+    }
+}

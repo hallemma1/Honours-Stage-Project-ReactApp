@@ -31,9 +31,12 @@
     flex-direction: column;
     cursor: default;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 .home-page-mobile-box-shadow{
-    width: 60%;
+    margin-top: 5px;
+    width: 70%;
     height: 40%;
     box-shadow: 0 0 20px #d2d2d2;
     background-color: var(--lightGreyBackground);
@@ -125,7 +128,7 @@
     background-color: var(--lightGreyBackground);
     font-family: 'Quicksand';
     color: var(--secondaryColor);
-    font-size: 22px;
+    font-size: 20px;
     border-color: var(--secondaryColor);
 }
 
@@ -187,7 +190,6 @@
     height: 70vh;
     position: relative;
     display: flex;
-    background-color: orange;
 }
 .CarouselImage-image {
     width: 100%; 

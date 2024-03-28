@@ -58,7 +58,7 @@ const MapKey = () => {
         <div className='key-item'>
             <div className='key-item-marker-meaning'>Penguin Counts 0</div>
             <svg className='key-item-marker-image-low' width="80" height="80" version="1.1" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="40,15 65,40 40,65 15,40" fill="#FF0000" stroke="#000000" strokeWidth="1"/>
+              <polygon points="40,15 65,40 40,65 15,40" fill="#FF0000" stroke="#000000" strokeWidth="1"/>
             </svg>
         </div>
         <div className='key-item-instruction'>
