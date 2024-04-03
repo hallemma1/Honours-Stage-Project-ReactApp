@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5108/api',
+    baseURL: 'https://penguinserver.azurewebsites.net/api',
 });
 
 export const usePenguinData = () => {
