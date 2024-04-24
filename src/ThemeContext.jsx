@@ -3,6 +3,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
+  
   const [theme, setTheme] = useState({
     primaryColor: '#0661F4',
     primaryColorLight: '#66A1FF',
@@ -16,7 +17,6 @@ export const ThemeProvider = ({ children }) => {
     backgroundColor: '#FFF',
     lightGreyBackground: '#FAFAFA',
     lightShadow: '#EBEBEB',
-    // Add more color variables as needed
   });
 
   useEffect(() => {
